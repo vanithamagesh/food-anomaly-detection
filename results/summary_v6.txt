@@ -1,0 +1,31 @@
+goodonly_camera_v6 summary
+
+Average over foods (detection score = image AUROC; caught = defective items flagged when the alarm level is set so that about 5% of good items are rejected)
+
+Colour + texture (proposed)            detection  94.2%  pixel  98.2%  caught  79.2%  good rejected  3.8%
+Texture only (PatchCore)               detection  93.9%  pixel  98.7%  caught  75.3%  good rejected  3.7%
+Colour + texture, light (ResNet-18)    detection  95.8%  pixel  98.4%  caught  86.5%  good rejected  6.3%
+Colour only (CIELAB)                   detection  79.7%  pixel  84.1%  caught  54.8%  good rejected 17.8%
+PaDiM                                  detection  85.5%  pixel  98.0%  caught  52.8%  good rejected  5.2%
+Autoencoder                            detection  81.0%  pixel  82.1%  caught  51.3%  good rejected  8.5%
+Colour + texture, fixed max rule (v3)  detection  94.0%  pixel  98.0%  caught  75.3%  good rejected  4.5%
+
+Per food: image size, colour margin chosen on fake defects (inf = texture only)
+  Cashew       256 px   margin 2 (light 3)   fake defects caught: 0->62%, 0.5->63%, 1->63%, 2->65%, 3->64%, inf->64%
+  Chewing gum  256 px   margin 1 (light 1)   fake defects caught: 0->86%, 0.5->86%, 1->86%, 2->85%, 3->85%, inf->84%
+  Fryum        256 px   margin 3 (light 0)   fake defects caught: 0->92%, 0.5->92%, 1->92%, 2->92%, 3->92%, inf->85%
+  Pipe fryum   256 px   margin 3 (light 3)   fake defects caught: 0->91%, 0.5->93%, 1->94%, 2->95%, 3->95%, inf->94%
+  Macaroni 1   512 px   margin 0 (light 3)   fake defects caught: 0->89%, 0.5->89%, 1->89%, 2->89%, 3->89%, inf->85%
+  Macaroni 2   512 px   margin 0 (light 0.5)   fake defects caught: 0->89%, 0.5->89%, 1->89%, 2->88%, 3->88%, inf->82%
+
+Defect groups, pooled over foods (caught by colour + texture; share of alarm from colour)
+  Other                        n=  2  caught 100.0%  colour n/a
+  Stuck together               n= 36  caught 100.0%  colour 3%
+  Missing piece                n= 70  caught  95.7%  colour 0%
+  Holes                        n= 22  caught  95.5%  colour 0%
+  Burnt                        n= 39  caught  84.6%  colour 46%
+  Cracks                       n= 66  caught  81.8%  colour 0%
+  Spot of different colour     n= 74  caught  79.7%  colour 35%
+  Spot of similar colour       n=132  caught  78.0%  colour 37%
+  Broken piece                 n=155  caught  72.9%  colour 2%
+  Scratches                    n=138  caught  68.8%  colour 0%

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article below."
+title: "Detecting unseen defects in food products with deep learning trained only on defect-free images: an explainable machine-vision approach"
+authors:
+  - family-names: "[Surname]"
+    given-names: "[Given names]"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Detecting unseen defects in food products with deep learning trained only on defect-free images: an explainable machine-vision approach"
+  authors:
+    - family-names: "[Surname]"
+      given-names: "[Given names]"
+  journal: "Applied Food Research"
+  year: 2026
+  doi: "[to be added]"

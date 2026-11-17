@@ -1,0 +1,12 @@
+# data and generated outputs
+data/
+data_goodonly/
+results_goodonly_*/
+inspect_v5/
+*.zip
+*.tar
+*.pt
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
